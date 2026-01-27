@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giovanni Castro | Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/main.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="nav" aria-label="Main Navigation">
+        <a class="logo" href="#top">GC</a>
+
+        <button class="nav__toggle" aria-label="Open Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <ul class="nav__list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Work Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Portfolio</p>
+          <h1 class="hero__title">Giovanni Castro</h1>
+          <p class="hero__subtitle">
+            Test Engineering Intern | System Analysis & Development (IFSP) |
+            Python & Debugging
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">See projects</a>
+            <a class="btn btn--primary" href="#contact">Contact</a>
+            <a
+              class="btn btn--ghost"
+              href="./assets/Giovanni-Castro-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume
+            </a>
+          </div>
+
+          <div class="hero__links" aria-label="Social Links">
+            <a
+              class="link"
+              href="https://github.com/giovannicastrodev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="social__icon" aria-hidden="true"></span>
+              <span class="social__text">GitHub</span>
+            </a>
+
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/giovannicastromagalhaes/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="social__icon" aria-hidden="true"></span>
+              <span class="social__text">LinkedIn</span>
+            </a>
+
+            <a
+              class="link"
+              href="mailto:giovannicastrocontato@gmail.com?subject=Portfolio%20Contact"
+            >
+              <span class="social__icon" aria-hidden="true"></span>
+              <span class="social__text">E-Mail</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__glow" aria-hidden="true"></div>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About</h2>
+        <p>
+          Currently a Test Engineering Intern at Dell Technologies, contributing
+          to manufacturing efficiency and supporting the pilot phases of new
+          notebook platforms. Responsibilities include analyzing failures,
+          implementing solutions, and improving processes, leveraging skills in
+          debugging and Python. Pursuing a degree in Systems Analysis and
+          Development at the Federal Institute of São Paulo, complemented by a
+          technical education in Information Technology from ETEC Monte Mor.
+          Focused on applying technical expertise to solve complex challenges,
+          optimize workflows, and drive innovation in the tech industry.
+        </p>
+      </section>
+
+      <!-- experience (full width) -->
+      <section id="experience" class="section experience">
+        <h2>Experience</h2>
+
+        <div class="experience__carousel" aria-roledescription="carousel">
+          <button
+            class="carousel__btn carousel__btn--prev"
+            type="button"
+            aria-label="Previous experience"
+          >
+            ‹
+          </button>
+
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+              <!-- slide 1 -->
+              <article class="carousel__slide" aria-label="Dell Technologies">
+                <div class="slide__inner">
+                  <div class="slide__left">
+                    <div class="slide__logo" aria-hidden="true">DELL</div>
+                    <p class="slide__role">Test Engineering Intern</p>
+                    <p class="slide__date">Jun/2024 – Present</p>
+                  </div>
+
+                  <div class="slide__right">
+                    <h3 class="slide__company">Dell Technologies</h3>
+                    <p class="slide__summary">
+                      As a Test Engineering Intern, I support manufacturing test
+                      efficiency and assist in pilot phases of new notebook
+                      platforms, focusing on failure analysis, debugging and
+                      process improvements.
+                    </p>
+
+                    <ul class="slide__bullets">
+                      <li>Failure analysis and root-cause debugging</li>
+                      <li>Python tooling to optimize workflow and logs</li>
+                      <li>Pilot support for new notebook platforms</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <!-- slide 2 -->
+              <article class="carousel__slide" aria-label="Monte Mor City Hall">
+                <div class="slide__inner">
+                  <div class="slide__left">
+                    <div class="slide__logo" aria-hidden="true">CITY HALL</div>
+                    <p class="slide__role">IT Intern</p>
+                    <p class="slide__date">May/2023 – Dec/2023</p>
+                  </div>
+
+                  <div class="slide__right">
+                    <h3 class="slide__company">Monte Mor City Hall</h3>
+                    <p class="slide__summary">
+                      Provided technical support across multiple departments,
+                      handling troubleshooting, device setup and maintaining
+                      operational continuity through reliable IT assistance.
+                    </p>
+
+                    <ul class="slide__bullets">
+                      <li>Hardware/software troubleshooting and user support</li>
+                      <li>PC setup/imaging and printer configuration</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <!-- slide 3 -->
+              <article class="carousel__slide" aria-label="Demutran Monte Mor">
+                <div class="slide__inner">
+                  <div class="slide__left">
+                    <div class="slide__logo" aria-hidden="true">DEMUTRAN</div>
+                    <p class="slide__role">Administrative Intern</p>
+                    <p class="slide__date">May/2022 – May/2023</p>
+                  </div>
+
+                  <div class="slide__right">
+                    <h3 class="slide__company">Demutran Monte Mor</h3>
+                    <p class="slide__summary">
+                      Supported the Urban Mobility team with spreadsheets,
+                      registrations for Special Public Transport, and internal
+                      communication materials using Microsoft Office tools.
+                    </p>
+
+                    <ul class="slide__bullets">
+                      <li>Spreadsheet updates and reporting (Excel)</li>
+                      <li>User registrations and service documentation</li>
+                      <li>Internal communication materials (PowerPoint)</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <button
+            class="carousel__btn carousel__btn--next"
+            type="button"
+            aria-label="Next experience"
+          >
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="chips">
+          <span class="chip">HTML/CSS</span>
+          <span class="chip">Python</span>
+          <span class="chip">SQL / SQL Server</span>
+          <span class="chip">Kotlin</span>
+          <span class="chip">PHP</span>
+          <span class="chip">Problem Solving</span>
+          <span class="chip">Failure Analysis</span>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects__grid"></div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>We’ll make this look great: buttons, icons, and links.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> Giovanni Castro</small>
+    </footer>
+  </body>
+</html>
