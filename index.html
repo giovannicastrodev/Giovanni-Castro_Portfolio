@@ -36,13 +36,11 @@
           <p class="hero__eyebrow">Portfolio</p>
           <h1 class="hero__title">Giovanni Castro</h1>
           <p class="hero__subtitle">
-            Test Engineering Intern | System Analysis & Development (IFSP) |
+            Test Engineering Intern | System Analysis & Development (IFSP) | </br>
             Python & Debugging
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#projects">See projects</a>
-            <a class="btn btn--primary" href="#contact">Contact</a>
             <a
               class="btn btn--ghost"
               href="./assets/Giovanni-Castro-Resume.pdf"
@@ -50,38 +48,47 @@
               rel="noopener noreferrer"
             >
               View Resume
+              <svg style="margin-left: 8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
             </a>
           </div>
 
           <div class="hero__links" aria-label="Social Links">
             <a
-              class="link"
+              class="social-btn"
               href="https://github.com/giovannicastrodev/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
             >
-              <span class="social__icon" aria-hidden="true"></span>
-              <span class="social__text">GitHub</span>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
 
             <a
-              class="link"
+              class="social-btn"
               href="https://www.linkedin.com/in/giovannicastromagalhaes/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
             >
-              <span class="social__icon" aria-hidden="true"></span>
-              <span class="social__text">LinkedIn</span>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
 
             <a
-              class="link"
+              class="social-btn"
               href="mailto:giovannicastrocontato@gmail.com?subject=Portfolio%20Contact"
+              aria-label="Send E-Mail"
             >
-              <span class="social__icon" aria-hidden="true"></span>
-              <span class="social__text">E-Mail</span>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </a>
           </div>
+        </div>
+
+        <div class="hero__image__container">
+          <img
+            src=".\assets\profile.jpg"
+            alt="Giovanni Castro Profile"
+            class="hero__profile-pic"
+          >
         </div>
 
         <div class="hero__glow" aria-hidden="true"></div>
@@ -120,8 +127,14 @@
               <!-- slide 1 -->
               <article class="carousel__slide" aria-label="Dell Technologies">
                 <div class="slide__inner">
+
                   <div class="slide__left">
-                    <div class="slide__logo" aria-hidden="true">DELL</div>
+                    <img
+                      class="slide__logo"
+                      src=".\assets\dell.png"
+                      alt="Logo da Dell Technologies"
+                    >
+
                     <p class="slide__role">Test Engineering Intern</p>
                     <p class="slide__date">Jun/2024 – Present</p>
                   </div>
@@ -141,14 +154,20 @@
                       <li>Pilot support for new notebook platforms</li>
                     </ul>
                   </div>
+                  
                 </div>
               </article>
 
               <!-- slide 2 -->
               <article class="carousel__slide" aria-label="Monte Mor City Hall">
                 <div class="slide__inner">
+
                   <div class="slide__left">
-                    <div class="slide__logo" aria-hidden="true">CITY HALL</div>
+                    <img
+                      class="slide__logo"
+                      src=".\assets\prefeitura.png"
+                      alt="Logo da Prefeitura de Monte Mor"
+                    >
                     <p class="slide__role">IT Intern</p>
                     <p class="slide__date">May/2023 – Dec/2023</p>
                   </div>
@@ -166,14 +185,20 @@
                       <li>PC setup/imaging and printer configuration</li>
                     </ul>
                   </div>
+
                 </div>
               </article>
 
               <!-- slide 3 -->
               <article class="carousel__slide" aria-label="Demutran Monte Mor">
                 <div class="slide__inner">
+                  
                   <div class="slide__left">
-                    <div class="slide__logo" aria-hidden="true">DEMUTRAN</div>
+                    <img
+                      class="slide__logo"
+                      src=".\assets\demutran.png"
+                      alt="Logo do Demutran"
+                    >
                     <p class="slide__role">Administrative Intern</p>
                     <p class="slide__date">May/2022 – May/2023</p>
                   </div>
@@ -193,6 +218,7 @@
                     </ul>
                   </div>
                 </div>
+                
               </article>
             </div>
           </div>

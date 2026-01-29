@@ -22,10 +22,19 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
+
+  /* O TRUQUE: Um degradê radial que imita uma luz vindo do topo */
+  background-image: radial-gradient(
+    circle at 50% -10%, 
+    rgba(77, 163, 255, 0.12) 0%, 
+    rgba(11, 15, 20, 0) 50%
+  );
+  /* Fixa o background para a luz não rolar junto com a página */
+  background-attachment: fixed; 
 }
 
 a {
@@ -83,6 +92,38 @@ a {
   width: min(var(--container), 92%);
   margin: 0 auto;
   padding: 72px 0 36px;
+  position: relative;
+  
+  /* Lado a lado */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-between; /* Texto na ponta esquerda, foto na direita */
+  gap: 40px; /* Espaço entre texto e foto */
+}
+
+.hero__content {
+  flex: 1; /* Ocupa o espaço disponível */
+  max-width: 600px;
+}
+
+.hero__profile-pic {
+  width: 280px;  /* Tamanho no Desktop */
+  height: 280px; /* Quadrado para virar círculo */
+  
+  border-radius: 50%; /* Vira bolinha */
+  object-fit: cover; /* Garante que a foto não distorça */
+  
+  /* Borda e Brilho */
+  border: 2px solid rgba(77, 163, 255, 0.3); /* Borda azulada sutil */
+  box-shadow: 0 0 40px rgba(77, 163, 255, 0.15); /* Aquele "glow" atrás da foto */
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__profile-pic:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 60px rgba(77, 163, 255, 0.25);
+  border-color: var(--accent);
 }
 
 .hero__eyebrow {
@@ -143,16 +184,33 @@ a {
   margin-top: 16px;
 }
 
-.hero__links .link {
-  display: inline-flex;
+.social-btn {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  
   border: 1px solid var(--border);
-  border-radius: 999px;
   background: rgba(255, 255, 255, 0.03);
-  font-size: 0.95rem;
-  transition: all 180ms ease;
+  color: var(--muted);
+  
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(77, 163, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(77, 163, 255, 0.15);
+}
+
+.social-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
 .hero__links .link:hover {
@@ -161,9 +219,9 @@ a {
   background: rgba(77, 163, 255, 0.08);
 }
 
-/* --- seções gerais --- */
+/* seções gerais */
 .section {
-  width: min(var(--container-narrow), 92%);
+  width: min(var(--container), 92%);
   margin: 0 auto;
   padding: 64px 0;
 }
@@ -198,7 +256,7 @@ a {
 }
 
 .section.experience > h2 {
-  width: min(var(--container-narrow), 92%);
+  width: min(var(--container), 92%);
   margin: 0 auto 18px;
 }
 
@@ -320,19 +378,32 @@ a {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
+  /* Fundo mais transparente */
+  background: rgba(255, 255, 255, 0.02);
+  
+  /* Borda sutil com gradiente (top mais claro, bottom mais escuro) */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.15); /* Luz batendo em cima */
+  
   border-radius: 16px;
   padding: 24px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  
+  /* O pulo do gato: Sombra suave para dar altura */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(77, 163, 255, 0.4);
+  transform: translateY(-5px); /* Sobe um pouco mais */
+  background: rgba(255, 255, 255, 0.04); /* Fica levemente mais claro */
+  border-color: rgba(77, 163, 255, 0.3); /* Borda azulada */
+  /* Sombra mais forte no hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .project-card__header {
@@ -382,6 +453,20 @@ a {
   padding: 8px 12px;
 }
 
+.slide__logo {
+  width: 120px;
+  height: 120px;
+
+  object-fit: contain;
+  object-position: left center;
+
+  margin-bottom: 16px;
+
+  border: none;
+  background: transparent;
+  border-radius: 0;
+}
+
 /* --- responsividade --- */
 @media (max-width: 720px) {
   .nav__toggle {
@@ -418,8 +503,27 @@ a {
     transform: translateY(0);
   }
 
-  .hero { padding: 56px 0 28px; }
-  .carousel__viewport { padding: 0 20px; }
-  .slide__inner { grid-template-columns: 1fr; }
-  .slide__logo { height: 140px; }
+.hero {
+    flex-direction: column-reverse; /* Foto em cima, Texto embaixo? Ou column normal? */
+    /* Vamos usar column normal (Texto em cima) ou column-reverse (Foto em cima). 
+       Vou colocar column-reverse porque foto primeiro gera conexão visual. */
+    flex-direction: column-reverse; 
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .hero__content {
+    width: 100%;
+  }
+
+  /* Centralizar os botões no mobile */
+  .hero__cta, .hero__links {
+    justify-content: center;
+  }
+
+  .hero__profile-pic {
+    width: 180px; /* Menor no celular */
+    height: 180px;
+    margin-bottom: 24px;
+  }
 }
