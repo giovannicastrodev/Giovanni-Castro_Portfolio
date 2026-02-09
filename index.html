@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt-BR">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giovanni Castro | Portfolio</title>
+    
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
     <link rel="stylesheet" href="./css/style.css" />
+    
     <script defer src="./js/main.js"></script>
   </head>
 
@@ -12,7 +17,7 @@
       <nav class="nav" aria-label="Main Navigation">
         <a class="logo" href="#top">GC</a>
 
-        <button class="nav__toggle" aria-label="Open Menu" aria-expanded="false">
+        <button class="nav__toggle" aria-label="Abrir Menu" aria-expanded="false">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -22,8 +27,8 @@
 
         <ul class="nav__list">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Work Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Tech Stack</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -31,234 +36,196 @@
     </header>
 
     <main id="top">
+      
       <section class="hero">
         <div class="hero__content">
           <p class="hero__eyebrow">Portfolio</p>
           <h1 class="hero__title">Giovanni Castro</h1>
           <p class="hero__subtitle">
-            Test Engineering Intern | System Analysis & Development (IFSP) | </br>
+            Test Engineering Intern | System Analysis & Development (IFSP) | <br>
             Python & Debugging
           </p>
 
           <div class="hero__cta">
-            <a
-              class="btn btn--ghost"
-              href="./assets/Giovanni-Castro-Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="btn btn--primary" href="./assets/Giovanni-Castro-Resume.pdf" target="_blank">
               View Resume
               <svg style="margin-left: 8px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
             </a>
           </div>
 
-          <div class="hero__links" aria-label="Social Links">
-            <a
-              class="social-btn"
-              href="https://github.com/giovannicastrodev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-            >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <div class="hero__links">
+            <a class="social-btn" href="https://github.com/giovannicastrodev/" target="_blank" aria-label="GitHub Profile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
-
-            <a
-              class="social-btn"
-              href="https://www.linkedin.com/in/giovannicastromagalhaes/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-            >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <a class="social-btn" href="https://www.linkedin.com/in/giovannicastromagalhaes/" target="_blank" aria-label="LinkedIn Profile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
-
-            <a
-              class="social-btn"
-              href="mailto:giovannicastrocontato@gmail.com?subject=Portfolio%20Contact"
-              aria-label="Send E-Mail"
-            >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a class="social-btn" href="mailto:giovannicastrocontato@gmail.com" aria-label="Send E-Mail">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </a>
           </div>
         </div>
 
-        <div class="hero__image__container">
-          <img
-            src=".\assets\profile.jpg"
-            alt="Giovanni Castro Profile"
-            class="hero__profile-pic"
-          >
+        <div class="hero__image-container">
+          <img src="./assets/profile.jpg" alt="Giovanni Castro" class="hero__profile-pic">
         </div>
-
-        <div class="hero__glow" aria-hidden="true"></div>
       </section>
 
       <section id="about" class="section">
-        <h2>About</h2>
-        <p>
-          Currently a Test Engineering Intern at Dell Technologies, contributing
-          to manufacturing efficiency and supporting the pilot phases of new
-          notebook platforms. Responsibilities include analyzing failures,
-          implementing solutions, and improving processes, leveraging skills in
-          debugging and Python. Pursuing a degree in Systems Analysis and
-          Development at the Federal Institute of São Paulo, complemented by a
-          technical education in Information Technology from ETEC Monte Mor.
-          Focused on applying technical expertise to solve complex challenges,
-          optimize workflows, and drive innovation in the tech industry.
-        </p>
+        <h2>About Me</h2>
+        <div class="about__content">
+          <p>
+            Currently a <strong>Test Engineering</strong> Intern at <strong>Dell Technologies</strong>, contributing
+            to manufacturing efficiency and supporting the pilot phases of new
+            notebook platforms.
+          </p>
+          <br>
+          <p>
+            Responsibilities include analyzing failures,
+            <strong>implementing solutions</strong>, and improving processes, leveraging skills in
+            <strong>debugging and Python</strong>.
+          </p>
+          <br>
+          <p>
+            Pursuing a <strong>Degree</strong> in <strong>Systems Analysis and
+            Development</strong> at the <strong>Federal Institute of São Paulo</strong>, complemented by a
+            <strong>Technical Education</strong> in <strong>Information Technology</strong> from ETEC Monte Mor.
+            Focused on applying technical expertise to solve complex challenges,
+            optimize workflows, and drive innovation in the tech industry.
+          </p>
+        </div>
       </section>
 
-      <!-- experience (full width) -->
       <section id="experience" class="section experience">
         <h2>Experience</h2>
 
-        <div class="experience__carousel" aria-roledescription="carousel">
-          <button
-            class="carousel__btn carousel__btn--prev"
-            type="button"
-            aria-label="Previous experience"
-          >
-            ‹
-          </button>
+        <div id="experience-carousel" class="carousel">
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">‹</button>
 
           <div class="carousel__viewport">
             <div class="carousel__track">
-              <!-- slide 1 -->
-              <article class="carousel__slide" aria-label="Dell Technologies">
+              
+              <article class="carousel__slide">
                 <div class="slide__inner">
-
                   <div class="slide__left">
-                    <img
-                      class="slide__logo"
-                      src=".\assets\dell.png"
-                      alt="Logo da Dell Technologies"
-                    >
-
+                    <img class="slide__logo" src="./assets/dell.png" alt="Dell Logo">
                     <p class="slide__role">Test Engineering Intern</p>
                     <p class="slide__date">Jun/2024 – Present</p>
                   </div>
-
                   <div class="slide__right">
                     <h3 class="slide__company">Dell Technologies</h3>
                     <p class="slide__summary">
-                      As a Test Engineering Intern, I support manufacturing test
-                      efficiency and assist in pilot phases of new notebook
-                      platforms, focusing on failure analysis, debugging and
-                      process improvements.
+                      Supporting manufacturing test efficiency and pilot phases of new notebook platforms, 
+                      focusing on failure analysis and python automation.
                     </p>
-
-                    <ul class="slide__bullets">
-                      <li>Failure analysis and root-cause debugging</li>
-                      <li>Python tooling to optimize workflow and logs</li>
-                      <li>Pilot support for new notebook platforms</li>
-                    </ul>
                   </div>
-                  
                 </div>
               </article>
 
-              <!-- slide 2 -->
-              <article class="carousel__slide" aria-label="Monte Mor City Hall">
+              <article class="carousel__slide">
                 <div class="slide__inner">
-
                   <div class="slide__left">
-                    <img
-                      class="slide__logo"
-                      src=".\assets\prefeitura.png"
-                      alt="Logo da Prefeitura de Monte Mor"
-                    >
+                    <img class="slide__logo" src="./assets/prefeitura.png" alt="Prefeitura Logo">
                     <p class="slide__role">IT Intern</p>
                     <p class="slide__date">May/2023 – Dec/2023</p>
                   </div>
-
                   <div class="slide__right">
                     <h3 class="slide__company">Monte Mor City Hall</h3>
                     <p class="slide__summary">
-                      Provided technical support across multiple departments,
-                      handling troubleshooting, device setup and maintaining
-                      operational continuity through reliable IT assistance.
+                      Provided technical support, hardware troubleshooting, and maintained IT operational continuity.
                     </p>
-
-                    <ul class="slide__bullets">
-                      <li>Hardware/software troubleshooting and user support</li>
-                      <li>PC setup/imaging and printer configuration</li>
-                    </ul>
                   </div>
-
                 </div>
               </article>
 
-              <!-- slide 3 -->
-              <article class="carousel__slide" aria-label="Demutran Monte Mor">
+              <article class="carousel__slide">
                 <div class="slide__inner">
-                  
                   <div class="slide__left">
-                    <img
-                      class="slide__logo"
-                      src=".\assets\demutran.png"
-                      alt="Logo do Demutran"
-                    >
+                    <img class="slide__logo" src="./assets/demutran.png" alt="Demutran Logo">
                     <p class="slide__role">Administrative Intern</p>
                     <p class="slide__date">May/2022 – May/2023</p>
                   </div>
-
                   <div class="slide__right">
                     <h3 class="slide__company">Demutran Monte Mor</h3>
                     <p class="slide__summary">
-                      Supported the Urban Mobility team with spreadsheets,
-                      registrations for Special Public Transport, and internal
-                      communication materials using Microsoft Office tools.
+                      Supported the Urban Mobility team with reporting, spreadsheets, and internal communication.
                     </p>
-
-                    <ul class="slide__bullets">
-                      <li>Spreadsheet updates and reporting (Excel)</li>
-                      <li>User registrations and service documentation</li>
-                      <li>Internal communication materials (PowerPoint)</li>
-                    </ul>
                   </div>
                 </div>
-                
               </article>
+
             </div>
           </div>
 
-          <button
-            class="carousel__btn carousel__btn--next"
-            type="button"
-            aria-label="Next experience"
-          >
-            ›
-          </button>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">›</button>
         </div>
       </section>
 
       <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="chips">
-          <span class="chip">HTML/CSS</span>
-          <span class="chip">Python</span>
-          <span class="chip">SQL / SQL Server</span>
-          <span class="chip">Kotlin</span>
-          <span class="chip">PHP</span>
-          <span class="chip">Problem Solving</span>
-          <span class="chip">Failure Analysis</span>
+        <h2>Tech Stack</h2>
+        <div class="skills__grid">
+          <div class="skill-card">
+            <i class="devicon-python-plain colored skill-icon"></i>
+            <span class="skill-name">Python</span>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-java-plain colored skill-icon"></i>
+            <span class="skill-name">Java</span>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-kotlin-plain colored skill-icon"></i>
+            <span class="skill-name">Kotlin</span>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-azuresqldatabase-plain colored skill-icon"></i>
+            <span class="skill-name">SQL</span>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-html5-plain colored skill-icon"></i>
+            <span class="skill-name">HTML5</span>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-git-plain colored skill-icon"></i>
+            <span class="skill-name">Git</span>
+          </div>
+          <div class="skill-card">
+            <i class="devicon-amazonwebservices-plain-wordmark colored skill-icon"></i>
+            <span class="skill-name">AWS</span>
+          </div>
         </div>
       </section>
 
       <section id="projects" class="section">
         <h2>Projects</h2>
-        <div class="projects__grid"></div>
+        <div id="project-carousel" class="carousel">
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+              </div>
+          </div>
+
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </section>
 
       <section id="contact" class="section">
         <h2>Contact</h2>
-        <p>We’ll make this look great: buttons, icons, and links.</p>
+        <p>Open to opportunities. Feel free to reach out via LinkedIn or Email.</p>
+        <div class="hero__links" style="justify-content: flex-start; margin-top: 20px;">
+           <a class="social-btn" href="mailto:giovannicastrocontato@gmail.com"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+           <a class="social-btn" href="https://www.linkedin.com/in/giovannicastromagalhaes/" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </div>
       </section>
+
     </main>
 
     <footer class="footer">
-      <small>© <span id="year"></span> Giovanni Castro</small>
+      <small>© <span id="year">2026</span> Giovanni Castro</small>
     </footer>
   </body>
 </html>

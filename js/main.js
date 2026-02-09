@@ -1,123 +1,113 @@
-// seleciona elementos do menu mobile
 const navToggle = document.querySelector('.nav__toggle');
 const navList = document.querySelector('.nav__list');
 
-navToggle.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    
-    // acessibilidade: avisa leitores de tela se está aberto ou não
-    const isActive = navList.classList.contains('active');
-    navToggle.setAttribute('aria-expanded', isActive);
-});
-
-/* --- lógica do carrossel --- */
-const track = document.querySelector('.carousel__track');
-const slides = Array.from(track.children); // converte a lista html em array js real para usarmos métodos de lista
-const nextButton = document.querySelector('.carousel__btn--next');
-const prevButton = document.querySelector('.carousel__btn--prev');
-
-let currentSlideIndex = 0;
-
-const updateCarousel = () => {
-    // pega a largura exata do slide em pixels para o calculo ser preciso
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    
-    // calcula quantos pixels precisamos deslocar para a esquerda
-    const amountToMove = currentSlideIndex * slideWidth;
-    track.style.transform = `translateX(-${amountToMove}px)`;
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', navList.classList.contains('active'));
+    });
 }
 
-nextButton.addEventListener('click', () => {
-    // evita erro ao tentar passar do ultimo slide
-    if (currentSlideIndex < slides.length - 1) {
-        currentSlideIndex++;
-        updateCarousel();
-    } else {
-        // loop infinito: volta para o primeiro
-        currentSlideIndex = 0;
-        updateCarousel();
-    }
-});
+// factory para inicializar carrosséis independentes
+const setupCarousel = (carouselId) => {
+    const container = document.querySelector(carouselId);
+    if (!container) return;
 
-prevButton.addEventListener('click', () => {
-    if (currentSlideIndex > 0) {
-        currentSlideIndex--;
-        updateCarousel();
-    } else {
-        // loop infinito: vai para o ultimo
-        currentSlideIndex = slides.length - 1;
-        updateCarousel();
-    }
-});
+    const track = container.querySelector('.carousel__track');
+    const slides = Array.from(track.children);
+    const nextBtn = container.querySelector('.carousel__btn--next');
+    const prevBtn = container.querySelector('.carousel__btn--prev');
+    let currentIndex = 0;
 
-// garante que o carrossel se ajuste se o usuário redimensionar a tela
-window.addEventListener('resize', () => {
-    updateCarousel();
-});
+    const update = () => {
+        // cálculo dinâmico da largura para responsividade
+        const width = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * width}px)`;
+    };
 
-/* --- projetos dinâmicos --- */
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+        update();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+        update();
+    });
+
+    window.addEventListener('resize', update);
+};
+
 const projectsData = [
     {
-        title: "PetMatch",
-        description: "Aplicativo mobile nativo para adoção de animais, focado em UX e geolocalização.",
-        tech: ["Kotlin", "OAuth 2.0", "Supabase"],
-        repolink: "#",
-        demoLink: "https://www.linkedin.com/posts/giovannicastromagalhaes_androiddev-kotlin-jetpackcompose-activity-7403609869473275904-wydY"
+        title: "PetMatch Mobile",
+        description: "App nativo (Android/Kotlin) para adoção de pets com geolocalização e foco em UX.",
+        image: "./assets/project-petmatch.png",
+        techs: ["Kotlin", "OAuth2.0"],
+        repoLink: "https://github.com/giovannicastrodev/pet-match",
+        linkedinLink: "https://www.linkedin.com/posts/giovannicastromagalhaes_androiddev-kotlin-jetpackcompose-activity-7403609869473275904-wydY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKNKxEBpek0s7H8h9xlyhnwnyiyN5And8w"
     },
     {
         title: "FakeAnalyser ChatBot",
-        description: "Bot inteligente que analisa textos para identificar possíveis fake news usando PLN.",
-        tech: ["React", "JavaScript", "NodeJS"],
-        repolink: "#",
-        demoLink: "https://www.linkedin.com/posts/giovannicastromagalhaes_you-know-when-you-revisit-old-code-and-see-activity-7402404372208484352-iWRy"
+        description: "Bot inteligente que analisa textos para identificar fake news usando IA e React.",
+        image: "./assets/project-chatbot.jpg",
+        techs: ["React", "JavaScript", "HTML", "CSS"],
+        repoLink: "https://github.com/giovannicastrodev/fnbook_AIchatbot",
+        linkedinLink: "https://www.linkedin.com/posts/giovannicastromagalhaes_you-know-when-you-revisit-old-code-and-see-activity-7402404372208484352-iWRy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKNKxEBpek0s7H8h9xlyhnwnyiyN5And8w"
     },
     {
-        title: "LogFinder",
-        description: "Ferramenta desktop para varredura e análise rápida de logs de erro em servidores.",
-        tech: ["Python", "Tkinter"],
-        repolink: "#",
-        demoLink: "#"
+        title: "ERP de Assentamento",
+        description: "Módulo Java para gestão de propriedades rurais, controle de lotes e proprietários.",
+        image: "./assets/project-erp.png",
+        techs: ["Java", "Swing"],
+        repoLink: "https://github.com/giovannicastrodev/erp-assentamento-vendas",
+        linkedinLink: null
     }
 ];
 
-const projectsContainer = document.querySelector('.projects__grid');
+const projectTrack = document.querySelector('#project-carousel .carousel__track');
 
-const createProjectCard = (project) => {
-    // map percorre cada tecnologia e cria o html da etiqueta (span)
-    // join('') une todas as etiquetas em um único texto, sem vírgulas
-    const tagsHtml = project.tech
-        .map(tech => `<span class="project-card__tag">${tech}</span>`)
-        .join('');
+if (projectTrack) {
+    projectTrack.innerHTML = projectsData.map(proj=>{
+        const techsHtml = proj.techs
+            ? proj.techs.map(t => `<span class="tech-tag">${t}</span>`).join('')
+            : '';
+        const githubBtn = proj.repoLink
+            ? `<a href="${proj.repoLink}" target="_blank" class="btn btn--small">GitHub</a>`
+            : '';
+        const linkedinBtn = proj.linkedinLink
+            ? `<a href="${proj.linkedinLink}" target="_blank" class="btn btn--linkedin">Ver Post</a>`
+            : '';
 
-    // retorna o template string (html com variáveis js)
-    return `
-        <article class="project-card">
-            <div class="project-card__header">
-                <h3 class="project-card__title">${project.title}</h3>
+        return `
+            <div class="carousel__slide">
+                <article class="project-card--wide">
+
+                    <div class="card__image-box">
+                        <img src="${proj.image}" alt="${proj.title}" class="card__img">
+                    </div>
+
+                    <div class="card__content">
+                        <h3 class="card__title">${proj.title}</h3>
+                        <p class="card__desc">${proj.description}</p>
+
+                        <div class="card__techs">${techsHtml}</div>
+
+                        <div class="card__actions">
+                            ${githubBtn}
+                            ${linkedinBtn}
+                        </div>
+                    </div>
+
+                </article>
             </div>
+        `;
+    }).join('');
 
-            <div class="project-card__tags">
-                ${tagsHtml}
-            </div>
-
-            <p class="project-card__desc">
-                ${project.description}
-            </p>
-
-            <div class="project-card__links">
-                <a href="${project.repolink}" target="_blank" class="link link--sm">
-                    GitHub
-                </a>
-                <a href="${project.demoLink}" target="_blank" class="link link--sm">
-                    Live Demo
-                </a>
-            </div>
-        </article>
-    `;
-};
-
-// verifica se o container existe para evitar erro em páginas sem a seção
-if (projectsContainer) {
-    const allCardsHtml = projectsData.map(createProjectCard).join('');
-    projectsContainer.innerHTML = allCardsHtml;
+    // inicia carrossel apenas após injeção do dom
+    setupCarousel('#project-carousel');
 }
+
+setupCarousel('#experience-carousel');
+
+document.getElementById('year').textContent = new Date().getFullYear();
