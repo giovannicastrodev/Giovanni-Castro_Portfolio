@@ -1,0 +1,20 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <!-- IFSP Graphic Emblem: 9 squares grid + red circle -->
+  <g transform="translate(10, 10) scale(0.8)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="22" height="22" rx="4" fill="#329542"/>
+    <rect x="28" y="0" width="22" height="22" rx="4" fill="#329542"/>
+    <circle cx="67" cy="11" r="11" fill="#c72528"/>
+    <!-- Row 2 -->
+    <rect x="0" y="28" width="22" height="22" rx="4" fill="#329542"/>
+    <rect x="28" y="28" width="22" height="22" rx="4" fill="#329542"/>
+    <rect x="56" y="28" width="22" height="22" rx="4" fill="#329542"/>
+    <!-- Row 3 -->
+    <rect x="0" y="56" width="22" height="22" rx="4" fill="#329542"/>
+    <rect x="28" y="56" width="22" height="22" rx="4" fill="#329542"/>
+    <rect x="56" y="56" width="22" height="22" rx="4" fill="#329542"/>
+  </g>
+  <!-- Text -->
+  <text x="95" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="1">IFSP</text>
+  <text x="95" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#a1a1aa">Campus Hortolândia</text>
+</svg>

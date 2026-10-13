@@ -1,0 +1,17 @@
+﻿<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ed145b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#180020" stop-opacity="1"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g1)"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  <circle cx="400" cy="225" r="140" fill="rgba(237,20,91,0.15)" filter="blur(40px)"/>
+  <text x="400" y="200" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">FIAP REBOOT</text>
+  <text x="400" y="245" font-family="system-ui, sans-serif" font-size="20" font-weight="600" fill="#f472b6" text-anchor="middle" letter-spacing="2">INNOVATION & HACKATHON EXPERIENCE</text>
+  <text x="400" y="285" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.6)" text-anchor="middle">Sua foto do evento pode substituir este arquivo em public/assets/project-fiap.png</text>
+</svg>

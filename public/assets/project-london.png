@@ -1,0 +1,17 @@
+﻿<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#031b33" stop-opacity="1"/>
+    </linearGradient>
+    <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g2)"/>
+  <rect width="100%" height="100%" fill="url(#grid2)"/>
+  <circle cx="400" cy="225" r="140" fill="rgba(14,165,233,0.15)" filter="blur(40px)"/>
+  <text x="400" y="195" font-family="system-ui, sans-serif" font-size="40" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">LONDON IMMERSION</text>
+  <text x="400" y="240" font-family="system-ui, sans-serif" font-size="20" font-weight="600" fill="#38bdf8" text-anchor="middle" letter-spacing="2">BOLSA DE MÉRITO ACADÊMICO CPS</text>
+  <text x="400" y="285" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.6)" text-anchor="middle">Sua foto do intercâmbio pode substituir este arquivo em public/assets/project-london.png</text>
+</svg>
