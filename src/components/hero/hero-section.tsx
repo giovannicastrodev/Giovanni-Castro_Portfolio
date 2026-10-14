@@ -89,7 +89,7 @@ export function HeroSection() {
           >
             <div className="relative w-48 h-48 sm:w-60 sm:h-60 rounded-lg overflow-hidden">
               <Image
-                src="/assets/profile.jpg"
+                src="/Giovanni-Castro_Portfolio/assets/profile.jpg"
                 alt="Giovanni Castro"
                 fill
                 sizes="(max-width: 640px) 192px, 240px"
